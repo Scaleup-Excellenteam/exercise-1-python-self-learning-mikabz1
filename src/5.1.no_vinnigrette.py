@@ -2,7 +2,7 @@ import random
 import datetime
 
 MONDAY = 0
-def no_vinnigrete(user_date1 , user_date2) -> None:
+def no_vinnigrete(user_date1="" , user_date2 = "") -> None:
     """generate a random date between to user input date ,
         if the generated date is a monday print proper message ,
         the date format is 'YYYY-MM-DD'"""
