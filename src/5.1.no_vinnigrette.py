@@ -19,15 +19,18 @@ def no_vinnigrete(user_date1 , user_date2) -> None:
         return None
 
     # Convert to ordinal numbers
-    start = min(user_date1.toordinal(), user_date2.toordinal()) + 1 # Exclude lower bound
-    end = max(user_date1.toordinal(), user_date2.toordinal()) - 1 # Exclude upper bound
+    start = min(user_date1.toordinal(), user_date2.toordinal())  # Exclude lower bound
+    end = max(user_date1.toordinal(), user_date2.toordinal())  # Exclude upper bound
 
-    random_date = random.randint(start, end)
-    random_date = datetime.date.fromordinal(random_date)
+    if start == end:
+        random_date = datetime.date.fromordinal(start)
+    else:
+        random_date = random.randint(min(start+1, end-1) , max(start+1, end-1))
+        random_date = datetime.date.fromordinal(random_date)
 
     print("the random date is {}".format(random_date))
     if random_date.weekday() == MONDAY:
         print("i don't have vinnigrete")
 
 if __name__ == "__main__":
-    no_vinnigrete("2023-07-10", "2023-07-10")
+    no_vinnigrete("2023-07-11", "2023-07-10")
