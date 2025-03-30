@@ -30,4 +30,4 @@ def no_vinnigrete(user_date1 , user_date2) -> None:
         print("i don't have vinnigrete")
 
 if __name__ == "__main__":
-    no_vinnigrete()
+    no_vinnigrete("2023-07-10", "2023-07-10")
