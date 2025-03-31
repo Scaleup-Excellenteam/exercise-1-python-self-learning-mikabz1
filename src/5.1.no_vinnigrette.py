@@ -28,7 +28,6 @@ def no_vinnigrete(user_date1="" , user_date2 = "") -> None:
         random_date = random.randint(min(start+1, end-1) , max(start+1, end-1))
         random_date = datetime.date.fromordinal(random_date)
 
-    print("the random date is {}".format(random_date))
     if random_date.weekday() == MONDAY:
         print("Ain't gettin' no vinaigrette today :(")
 
