@@ -4,7 +4,7 @@ It assumes that the message is encoded in the y-coordinate values of black pixel
 """
 
 import os
-from PIL import Image
+import cv2
 
 def remember_remember(image_path):
     """
@@ -12,15 +12,14 @@ def remember_remember(image_path):
     It looks for pixels with value 1 (black) and uses the y-coordinate to form characters.
     Assumes the image has a message hidden in this way.
     """
-    img = Image.open(image_path)
-    img = img.convert('L')  # Convert the image to grayscale
-    width, height = img.size
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)  # Read image as grayscale
+    width, height = img.shape[1], img.shape[0]  # Get image dimensions (width, height)
     message = []
     for x in range(width):
         for y in range(height):
-            pixel = img.getpixel((x, y))
+            pixel = img[y, x]  # Access pixel value (note OpenCV uses y,x indexing)
 
-            if pixel == 1:  # If the pixel is black
+            if pixel == 0:  # If the pixel is black (grayscale value 0)
                 message.append(chr(y))  # Use the y-coordinate as the ASCII value
                 break
 
