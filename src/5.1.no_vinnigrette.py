@@ -1,3 +1,4 @@
+"""This module provides a function to generate a random date between two user input dates."""
 import random
 import datetime
 
@@ -14,11 +15,9 @@ def no_vinnigrete(user_date1="" , user_date2 = "") -> None:
         user_date2 = datetime.datetime.strptime(user_date2, date_format)
     except ValueError:
         print("invalid date")
-        return None
+        return
 
-   
-
-    if user_date1 == user_date1:
+    if user_date1 == user_date2:
         random_date = user_date1
     else:
          # Convert to ordinal numbers
