@@ -12,7 +12,7 @@ def piece_of_cake(prices:dict , optionals = None , **kwargs ):
        Returns the total sum of the calculated values.
        """
     try:
-        return sum(val / 100 * prices[name] for name , val in kwargs.items if name not in optionals)
+        return sum(val / 100 * prices[name] for name , val in kwargs.items() if name not in optionals)
     except KeyError:
         print("KeyError")
         return None
