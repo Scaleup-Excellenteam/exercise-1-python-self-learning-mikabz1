@@ -28,5 +28,5 @@ def remember_remember(image_path):
 
 
 if __name__ == '__main__':
-    image_path = os.path.abspath('./code.png')
-    print(remember_remember(image_path))
+    path_to_image = os.path.abspath('./code.png')  # Renamed variable here
+    print(remember_remember(path_to_image))
