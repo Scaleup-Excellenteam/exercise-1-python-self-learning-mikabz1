@@ -1,6 +1,7 @@
 """
 This module provides a function to process a string of text, removing punctuation and returning a dictionary 
-with words as keys and their lengths as values. Words are processed in lowercase, and non-alphabetical characters 
+with words as keys and their lengths as values. Words are processed in lowercase, 
+and non-alphabetical characters 
 are discarded.
 """
 
