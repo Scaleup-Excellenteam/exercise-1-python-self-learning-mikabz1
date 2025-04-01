@@ -7,7 +7,6 @@ import functools
 
 class TypeCheckError(Exception):
     """Custom exception for type mismatch errors."""
-    pass
 
 def type_check(correct_type):
     """
