@@ -1,4 +1,9 @@
-def group_by(func , iterable):
+"""
+This module contains a function `group_by` that groups elements of an iterable 
+based on the result of applying a given function.
+"""
+
+def group_by(func, iterable):
     """
        Groups elements of an iterable based on the result of applying a given function.
        Returns a dictionary where the keys are the function results, and the values are lists of items.
