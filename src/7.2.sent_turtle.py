@@ -11,7 +11,7 @@ class PostOffice:
         self.message_id = 0
         self.boxes = {user: [] for user in usernames}
 
-    def send_message(self, sender, recipient, message_body, urgent=False):
+    def send_message(self, sender, recipient, message_title , message_body, urgent=False):
         """Send a message to a recipient.
 
         :param str sender: The message sender's username.
@@ -33,6 +33,7 @@ class PostOffice:
             'body': message_body,
             'sender': sender,
             'unread': True,
+            'title': message_title,
         }
         if urgent:
             user_box.insert(0, message_details)
@@ -76,8 +77,9 @@ class PostOffice:
 
         result = []
         for box in user_box:
-            if word in box['body']:
+            if word.lower() in box['body'].lower() or word.lower() in box['title'].lower():
                 result.append(box)
+        return result
 
 
 
