@@ -1,5 +1,6 @@
 """
-This module defines a decorator function `surprise` that wraps functions and prints "surprise" when the wrapped function is called.
+This module defines a decorator function `surprise` that wraps functions and prints "surprise" when the 
+wrapped function is called.
 """
 
 import functools
