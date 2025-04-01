@@ -1,6 +1,6 @@
 def long_cat_is_long(text):
     """
-    Takes a string of text, removes punctuation, and returns a dictionary with words as keys and their lengths as values.
+    Takes a string of text, removes punctuation and returns a dictionary with words as keys and their lengths as values.
     Words are processed in lowercase and non-alphabetical characters are discarded.
     """
     words = [''.join(c for c in word if c.isalpha()) for word in text.lower().split()]
