@@ -25,8 +25,8 @@ class PostOffice:
         """
         try:
             user_box = self.boxes[recipient]
-        except KeyError:
-            raise KeyError("Recipient does not exist.")
+        except KeyError as e:
+            raise KeyError("Recipient does not exist.") from e
         self.message_id = self.message_id + 1
         message_details = {
             'id': self.message_id,
@@ -41,7 +41,7 @@ class PostOffice:
             user_box.append(message_details)
         return self.message_id
 
-    def read_inbox(self, username , N = 0):
+    def read_inbox(self, username , n = 0):
         """
            Retrieves up to N unread messages from the user's inbox and marks them as read.
            If N is 0, retrieves all unread messages.
@@ -49,20 +49,20 @@ class PostOffice:
            """
         try:
             user_box = self.boxes[username]
-        except KeyError:
-            raise KeyError("username does not exist.")
+        except KeyError as e:
+            raise KeyError("username does not exist.") from e
         result = []
-        if N == 0:
-            N = len(user_box)
+        if n == 0:
+            n = len(user_box)
         i = 0
-        while i < N and i < len(user_box):
+        while i < n and i < len(user_box):
             if user_box[i].get('unread'):
                 result.append(user_box[i])
                 user_box[i].update({'unread': False})
                 i += 1
             else:
                 i += 1
-                N += 1
+                n += 1
         return result
 
     def search_inbox(self , username , word):
@@ -80,6 +80,3 @@ class PostOffice:
             if word.lower() in box['body'].lower() or word.lower() in box['title'].lower():
                 result.append(box)
         return result
-
-
-
