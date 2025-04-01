@@ -1,4 +1,4 @@
-def piece_of_cake(prices:dict , optionals = [] , **kwargs ):
+def piece_of_cake(prices:dict , optionals = None , **kwargs ):
     """
        Calculates the weighted sum of values from `dictionary` based on `kwargs`, excluding keys in `optional`.
        Each value in `kwargs` is multiplied by the corresponding value in `dictionary` and divided by 100.
