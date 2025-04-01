@@ -6,8 +6,6 @@ def long_cat_is_long(text):
     words = [''.join(c for c in word if c.isalpha()) for word in text.lower().split()]
     return {word: len(word) for word in words if word}
 
-
-
 if __name__ == '__main__':
     text = """
     You see, wire telegraph is a kind of a very, very long cat.
