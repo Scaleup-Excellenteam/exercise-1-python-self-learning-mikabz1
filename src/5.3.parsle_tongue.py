@@ -17,7 +17,7 @@ def parsle_tongue():
                     buffer += char
                 else:buffer = ""
                 if  len(buffer) >= 5 and buffer.endswith('!'):
-                    yield buffer
+                    yield buffer[:-1]
                     buffer = ""
     except FileNotFoundError:
         return
