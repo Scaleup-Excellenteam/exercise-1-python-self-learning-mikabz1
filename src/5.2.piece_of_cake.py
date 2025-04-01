@@ -2,7 +2,6 @@
 This module provides a function to calculate the weighted sum of values from a dictionary.
 It computes the sum based on specific keys and their values, excluding optional keys.
 """
-from argparse import ArgumentError
 
 
 def piece_of_cake(prices:dict , optionals = None , **kwargs ):
