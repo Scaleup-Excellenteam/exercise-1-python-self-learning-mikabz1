@@ -4,12 +4,12 @@ from typing import Iterable
 
 def interleave(*args:Iterable):
     """Interleave elements from multiple iterables into a list."""
-    return [item for items in zip_longest(*args) for item in items if item not None]
+    return [item for items in zip_longest(*args) for item in items if item is not None]
 
 def generator_interleave(*args:Iterable):
     for elem in zip_longest(*args):
         for item in elem:
-            if item not None:
+            if item is not None:
                 yield item
 
 
