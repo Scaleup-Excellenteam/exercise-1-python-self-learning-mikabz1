@@ -23,7 +23,6 @@ def no_vinnigrete(user_date1="" , user_date2 = "") -> None:
          # Convert to ordinal numbers
         start = min(user_date1.toordinal(), user_date2.toordinal())   # Exclude lower bound
         end = max(user_date1.toordinal(), user_date2.toordinal())  # Exclude upper bound
-        
         random_date = random.randint(min(start+1, end-1) , max(start+1, end-1))
         random_date = datetime.date.fromordinal(random_date)
 
