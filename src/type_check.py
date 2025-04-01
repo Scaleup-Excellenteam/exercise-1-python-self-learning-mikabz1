@@ -13,14 +13,4 @@ def type_check(correct_type):
             return func(args)
         return wrapper
     return decorator
-#
-# @type_check(int)
-# def times2(num):
-#     return num*2
-#
-#
-#
-#
-# if __name__ == '__main__':
-#     times2('a')
 
