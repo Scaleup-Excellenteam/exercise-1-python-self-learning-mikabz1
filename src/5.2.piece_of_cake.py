@@ -16,8 +16,6 @@ def piece_of_cake(prices:dict , optionals = None , **kwargs ):
     except KeyError:
         print("KeyError")
         return None
-    except:
-        print("ArgumentError")
     except Exception as e:
         print(f"Error: {e}")
         return None
