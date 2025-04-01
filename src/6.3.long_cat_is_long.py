@@ -14,7 +14,7 @@ def long_cat_is_long(input_text):
     return {word: len(word) for word in words if word}
 
 if __name__ == '__main__':
-    input_text_sample  = """
+    TXT  = """
     You see, wire telegraph is a kind of a very, very long cat.
     You pull his tail in New York and his head is meowing in Los Angeles.
     Do you understand this?
