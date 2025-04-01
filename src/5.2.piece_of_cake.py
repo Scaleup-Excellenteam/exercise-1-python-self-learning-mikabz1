@@ -1,3 +1,6 @@
+from argparse import ArgumentError
+
+
 def piece_of_cake(prices:dict , optionals = None , **kwargs ):
     """
        Calculates the weighted sum of values from `dictionary` based on `kwargs`, excluding keys in `optional`.
@@ -9,6 +12,9 @@ def piece_of_cake(prices:dict , optionals = None , **kwargs ):
     except KeyError:
         print("KeyError")
         return None
+    except:
+        print("ArgumentError")
+        
 
 if __name__ == '__main__':
     print(piece_of_cake({ 'milk': 8}, chocolate=200, milk=100))
