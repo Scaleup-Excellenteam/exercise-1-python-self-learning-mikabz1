@@ -21,4 +21,4 @@ if __name__ == '__main__':
     And radio operates exactly the same way: you send signals here, they receive them there.
     The only difference is that there is no cat.
     """
-    print(long_cat_is_long(input_text_sample ))
+    print(long_cat_is_long(TXT ))
