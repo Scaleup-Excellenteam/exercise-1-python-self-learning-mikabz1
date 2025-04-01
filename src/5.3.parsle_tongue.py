@@ -1,3 +1,8 @@
+"""
+This module defines a function to extract sequences of at least five consecutive
+lowercase letters or exclamation marks ('!') from a binary file ('logo.jpg'),
+yielding them when they end with '!' and discarding the trailing '!'.
+"""
 
 import os
 def parsle_tongue():
@@ -20,7 +25,7 @@ def parsle_tongue():
                     yield buffer[:-1]
                     buffer = ""
     except FileNotFoundError:
-        return
+        print("file not found)
 
 if __name__ == '__main__':
     for message in parsle_tongue():
