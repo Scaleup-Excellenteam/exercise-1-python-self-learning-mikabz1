@@ -40,7 +40,7 @@ class PostOffice:
             user_box.append(message_details)
         return self.message_id
 
-    def read_message(self, username , N = 0):
+    def read_inbox(self, username , N = 0):
         """
            Retrieves up to N unread messages from the user's inbox and marks them as read.
            If N is 0, retrieves all unread messages.
