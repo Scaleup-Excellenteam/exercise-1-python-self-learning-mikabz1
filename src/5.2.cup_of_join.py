@@ -1,4 +1,4 @@
-def cup_of_join(*args , sep="-"):
+def cup_of_join(*args , sep=""):
     """
        Combines multiple lists into one, inserting a separator between them. Defaults to `"-"` if no separator is provided.
        Returns None if no lists are provided.
@@ -10,7 +10,8 @@ def cup_of_join(*args , sep="-"):
     for i , lst in enumerate(args):
         result.extend(lst)
         if i <= len(args) - 1:
-            result.append(sep)
+            if sep != "":
+                result.append(sep)
 
     return result
 
