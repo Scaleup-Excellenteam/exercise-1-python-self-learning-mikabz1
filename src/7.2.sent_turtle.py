@@ -55,7 +55,7 @@ class PostOffice:
             n = len(user_box)
         i = 0
         while i < N and i < len(user_box):
-            if not user_box[i].get('unread'):
+            if user_box[i].get('unread'):
                 result.append(user_box[i])
                 user_box[i].update({'unread': False})
                 i += 1
