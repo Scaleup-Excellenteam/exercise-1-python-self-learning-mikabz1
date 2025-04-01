@@ -1,14 +1,16 @@
-from itertools import chain
+from itertools import zip_longest
 from typing import Iterable
 
 
 def interleave(*args:Iterable):
     """Interleave elements from multiple iterables into a list."""
-    return list(chain.from_iterable(zip(*args)))
+    return [item for items in zip_longest(*args) for item in items if item not None]
 
 def generator_interleave(*args:Iterable):
-    for elem in zip(*args):
-        yield from elem
+    for elem in zip_longest(*args):
+        for item in elem:
+            if item not None:
+                yield item
 
 
 if __name__ == '__main__':
