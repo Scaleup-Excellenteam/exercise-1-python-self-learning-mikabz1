@@ -1,11 +1,11 @@
-def piece_of_cake(dictionary = {} , optional = [] , **kwargs ):
+def piece_of_cake(prices:dict , optionals = [] , **kwargs ):
     """
        Calculates the weighted sum of values from `dictionary` based on `kwargs`, excluding keys in `optional`.
        Each value in `kwargs` is multiplied by the corresponding value in `dictionary` and divided by 100.
        Returns the total sum of the calculated values.
        """
     try:
-        return sum(kwargs[name] / 100 * dictionary[name] for name in kwargs if name not in optional)
+        return sum(kwargs[name] / 100 * prices[name] for name in kwargs if name not in optionals)
     except KeyError:
         print("KeyError")
         return None
