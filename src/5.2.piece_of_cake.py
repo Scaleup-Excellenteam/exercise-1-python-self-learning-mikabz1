@@ -5,7 +5,7 @@ def piece_of_cake(dictionary:dict ={} , optional = [] , **kwargs ):
        Returns the total sum of the calculated values.
        """
     try:
-        return sum(kwargs[name] / 100 * dictionary[name] for name in kwargs if name not in optional)
+        return float(sum(kwargs[name] / 100 * dictionary[name] for name in kwargs if name not in optional))
     except KeyError:
         print("KeyError")
         return None
