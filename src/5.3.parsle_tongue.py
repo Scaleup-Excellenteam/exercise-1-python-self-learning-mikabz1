@@ -25,7 +25,7 @@ def parsle_tongue():
                     yield buffer[:-1]
                     buffer = ""
     except FileNotFoundError:
-        print("file not found)
+        print("file not found")
 
 if __name__ == '__main__':
     for message in parsle_tongue():
