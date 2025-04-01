@@ -1,3 +1,8 @@
+"""
+This module contains a PostOffice class that allows users to send and receive messages.
+It supports features such as sending messages, reading unread messages, and searching for words in the inbox.
+"""
+
 class PostOffice:
     """A Post Office class. Allows users to message each other.
 
@@ -72,8 +77,8 @@ class PostOffice:
            """
         try:
             user_box = self.boxes[username]
-        except KeyError:
-            raise KeyError("username does not exist.")
+        except KeyError as e:
+            raise KeyError("username does not exist.") from e
 
         result = []
         for box in user_box:
