@@ -53,7 +53,7 @@ class PostOffice:
             raise KeyError("username does not exist.")
         result = []
         if N == 0:
-            n = len(user_box)
+            N = len(user_box)
         i = 0
         while i < N and i < len(user_box):
             if user_box[i].get('unread'):
