@@ -48,7 +48,7 @@ class PostOffice:
 
     def read_inbox(self, username , n = 0):
         try:
-            user_box = self.boxes[user_name]
+            user_box = self.boxes[username]
         except KeyError as exc:
             raise KeyError("User not found") from exc
     
