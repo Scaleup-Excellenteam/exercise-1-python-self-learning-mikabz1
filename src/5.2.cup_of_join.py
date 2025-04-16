@@ -6,8 +6,6 @@ def cup_of_join(*args, sep=""):
     Defaults to `"-"` if no separator is provided.
     Returns None if no lists are provided.
     """
-    if not args:
-        return None
 
     result = []
     for i, lst in enumerate(args):
