@@ -47,11 +47,6 @@ class PostOffice:
         return self.message_id
 
     def read_inbox(self, username , n = 0):
-        """
-           Retrieves up to N unread messages from the user's inbox and marks them as read.
-           If N is 0, retrieves all unread messages.
-           Raises KeyError if the username does not exist.
-        """
         try:
             user_box = self.boxes[user_name]
         except KeyError as exc:
