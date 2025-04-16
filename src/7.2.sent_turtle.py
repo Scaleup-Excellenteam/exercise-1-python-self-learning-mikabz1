@@ -46,9 +46,9 @@ class PostOffice:
             user_box.append(message_details)
         return self.message_id
 
-    def read_inbox(self, username , n = 0):
+    def read_inbox(self, user_name , n = 0):
         try:
-            user_box = self.boxes[username]
+            user_box = self.boxes[user_name]
         except KeyError as exc:
             raise KeyError("User not found") from exc
     
