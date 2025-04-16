@@ -30,4 +30,6 @@ def no_vinnigrete(user_date1="" , user_date2 = "") -> None:
         print("Ain't gettin' no vinaigrette today :(")
 
 if __name__ == "__main__":
-    no_vinnigrete("2023-07-11", "2023-07-10")
+    user_first_date = input("enter first date")
+    user_second_date = input("enter second date")
+    no_vinnigrete(user_first_date, user_second_date)
