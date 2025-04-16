@@ -14,18 +14,17 @@ def parsle_tongue():
     buffer = ""
     path = os.path.abspath('./logo.jpg')
 
-    try:
-        with open(path, 'rb') as file:
-            while char := file.read(1):
-                char = char.decode('utf-8', errors='ignore')
-                if char.islower() or char == '!':
-                    buffer += char
-                else:buffer = ""
-                if  len(buffer) >= 5 and buffer.endswith('!'):
-                    yield buffer[:-1]
-                    buffer = ""
-    except FileNotFoundError:
-        print("file not found")
+  
+    with open(path, 'rb') as file:
+        while char := file.read(1):
+            char = char.decode('utf-8', errors='ignore')
+            if char.islower() or char == '!':
+                buffer += char
+            else:buffer = ""
+            if  len(buffer) >= 5 and buffer.endswith('!'):
+                yield buffer[:-1]
+                buffer = ""
+   
 
 if __name__ == '__main__':
     for message in parsle_tongue():
