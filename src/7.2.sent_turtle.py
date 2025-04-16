@@ -52,23 +52,35 @@ class PostOffice:
            If N is 0, retrieves all unread messages.
            Raises KeyError if the username does not exist.
            """
+        def read_inbox(self, user_name, n=0):
+        """Retrieve unread messages from a user's inbox and mark them as read.
+
+        :param str user_name: The username whose inbox is being accessed.
+        :param int n: The maximum number of unread messages to retrieve.
+                      If N=0, all unread messages are returned.
+        :return: A list of unread messages, each represented as a dictionary.
+        :rtype: list[dict]
+        :raises KeyError: If the user does not exist.
+        """
         try:
-            user_box = self.boxes[username]
-        except KeyError as e:
-            raise KeyError("username does not exist.") from e
-        result = []
-        if n == 0:
-            n = len(user_box)
-        i = 0
-        while i < n and i < len(user_box):
-            if user_box[i].get('unread'):
-                result.append(user_box[i])
-                user_box[i].update({'unread': False})
-                i += 1
+            user_box = self.boxes[user_name]
+        except KeyError as exc:
+            raise KeyError("User not found") from exc
+
+        n = len(user_box) if n == 0 else n
+        message_number = min(len(user_box), n)
+        read_number = 0
+        read_messages = []
+        while read_number < message_number:
+            if user_box[read_number].get('unread'):
+                read_messages.append(user_box[read_number])
+                user_box[read_number]['unread'] = False
+                read_number += 1
             else:
-                i += 1
-                n += 1
-        return result
+                read_number += 1
+                message_number += 1
+
+        return read_messages
 
     def search_inbox(self , username , word):
         """
